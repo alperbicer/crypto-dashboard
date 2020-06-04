@@ -1510,9 +1510,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-"amcharts3@github:amcharts/amcharts3":
+amcharts3@3.21.15:
   version "3.21.15"
-  resolved "https://codeload.github.com/amcharts/amcharts3/tar.gz/cac5a668652f271dd28c82a072da364c0bd708db"
+  resolved "https://registry.yarnpkg.com/amcharts3/-/amcharts3-3.21.15.tgz#1a8036c85da8e5248b23b5ca9875e42af058f028"
+  integrity sha512-t7/RA0iuDXN2QAneUThW87DbCnSUBYFWxSr2Hsd/+sPvfG0aqeUXEFpqsozcEl2y2XgCEQJ4jMaZ1X/CoYArGA==
 
 amdefine@>=0.0.4:
   version "1.0.1"

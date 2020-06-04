@@ -10,7 +10,7 @@
     "docs": "vue-cli-service build --dest docs"
   },
   "dependencies": {
-    "amcharts3": "github:amcharts/amcharts3",
+    "amcharts3": "3.21.15",
     "amstock3": "3.21.15",
     "bootstrap": "4.5.0",
     "timeago.js": "4.0.2",

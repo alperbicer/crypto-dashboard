@@ -5,7 +5,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
-    currencies: localStorage.hasOwnProperty('vue-crypto-currencies-new') ? JSON.parse(localStorage.getItem('vue-crypto-currencies-new')) : defaultPair,
+    currencies: Object.prototype.hasOwnProperty.call(localStorage, 'vue-crypto-currencies-new') ? JSON.parse(localStorage.getItem('vue-crypto-currencies-new')) : defaultPair,
     tickers: {},
     chartData: [],
   },
@@ -14,7 +14,6 @@ export default new Vuex.Store({
       return state.currencies.find(s => s.symbol === symbol);
     },
     getTickerById: state => (symbol) => {
-      debugger;
       return state.tickers[symbol];
     },
   },

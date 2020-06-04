@@ -99,7 +99,6 @@ export default {
       return this.$store.getters.getSymbolById(this.symbol) || {};
     },
     ticker() {
-      debugger;
       return this.$store.getters.getTickerById(this.symbol) || {};
     },
   },
