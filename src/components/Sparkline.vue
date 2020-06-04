@@ -18,17 +18,17 @@
             <feOffset 
               dx="-1" 
               dy="-1" 
-              result="offsetblur"/>
+              result="offsetblur" />
             <feFlood 
               id="glowAlpha" 
               flood-color="#666" 
-              flood-opacity="0.8"/>
+              flood-opacity="0.8" />
             <feComposite 
               in2="offsetblur" 
-              operator="in"/>
+              operator="in" />
             <feMerge>
-              <feMergeNode/>
-              <feMergeNode in="SourceGraphic"/>
+              <feMergeNode />
+              <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
         </defs>
@@ -40,14 +40,14 @@
         <path 
           :d="`M${linePoints.join(' ')}`" 
           :style="lineStyle" 
-          class="sline"/>
+          class="sline" />
       </g>
       <g>
         <circle 
           :cx="pt[pt.length - 1].x - 2" 
           :cy="pt[pt.length - 1].y" 
           :r="3" 
-          style="fill:red"/>
+          style="fill:red" />
       </g>
     </svg>
   </div>

@@ -5,7 +5,7 @@
         v-if="currentPage === 'infoview'" 
         class="back-btn" 
         @click="$router.push({ path: '/' })">
-        <i class="fa fa-angle-left fa-2x"/>
+        <i class="fa fa-angle-left fa-2x" />
       </button>
       <span class="page-title">VUE CRYPTO DASHBOARD</span>
     </header>
@@ -14,7 +14,7 @@
         name="fade" 
         mode="out-in">
         <keep-alive include="dashboard">
-          <router-view/>
+          <router-view />
         </keep-alive>
       </transition>
     </div>

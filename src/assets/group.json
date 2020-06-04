@@ -388,6 +388,11 @@
       "label": "Ethereum - (ETH)"
     },
     {
+      "value": "HBAR",
+      "name": "Hedera Hashgraph",
+      "label": "Hedera Hashgraph - (HBAR)"
+    },
+    {
       "value": "LTC",
       "name": "Litecoin",
       "label": "Litecoin - (LTC)"

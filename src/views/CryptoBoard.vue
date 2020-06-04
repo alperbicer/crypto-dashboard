@@ -6,7 +6,7 @@
       class="card-block">
       <CurrencyCard 
         :ticker="tickers[value.symbol] || {}" 
-        :info="value"/>
+        :info="value" />
     </div>
   </div>
 </template>

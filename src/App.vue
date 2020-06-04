@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LayoutPage/>
+    <LayoutPage />
   </div>
 </template>
 <script>

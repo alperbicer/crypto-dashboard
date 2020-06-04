@@ -6,7 +6,7 @@
         :options="currencyList[quote]" 
         :clearable="false" 
         v-model="baseCurrency" 
-        placeholder="Select Token"/>
+        placeholder="Select Token" />
       <span class="slash">/</span>
       <v-select 
         id="quote" 
@@ -15,14 +15,14 @@
         :clearable="false" 
         v-model="quote" 
         style="width: 100px" 
-        @input="resetBase"/>
+        @input="resetBase" />
       <button 
         class="add-btn" 
         @click="addCoinPair"><i 
           class="fa fa-plus fa-lg" 
-          aria-hidden="true"/></button>
+          aria-hidden="true" /></button>
     </div>
-    <CryptoBoard/>
+    <CryptoBoard />
   </div>
 </template>
 <script>

@@ -9,6 +9,11 @@ module.exports = {
     'plugin:vue/recommended',
   ],
   rules: {
+    "vue/html-closing-bracket-spacing": ["error", {
+      "startTag": "always" | "never",
+      "endTag": "always" | "never",
+      "selfClosingTag": "always",
+    }],
     'object-curly-spacing': ["error", "always", { "objectsInObjects": false }],
     'space-before-function-paren': ['error', {
       anonymous: 'always',

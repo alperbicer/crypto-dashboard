@@ -19,7 +19,7 @@
               :href="article.url" 
               target="_blank">{{ article.title }}</a>
           </h6>
-          <p v-html="truncateText(article.body)"/>
+          <p v-html="truncateText(article.body)" />
           <div class="news-data">
             <div class="news-source">{{ article.source_info.name }}</div>
             <div class="news-date">{{ article.published_on | time }}</div>

@@ -6,5 +6,6 @@
   {"symbol":"MDABTC","base":"MDA","quote":"BTC","name":"Moeda"},
   {"symbol":"EOSBTC","base":"EOS","quote":"BTC","name":"EOS"},
   {"symbol":"MDAETH","base":"MDA","quote":"ETH","name":"Moeda"},
-  {"symbol":"TRXETH","base":"TRX","quote":"ETH","name":"Tronix"}
+  {"symbol":"TRXETH","base":"TRX","quote":"ETH","name":"Tronix"},
+  {"symbol":"HBARBTC","base":"HBAR","quote":"BTC","name":"HBAR"}
 ]

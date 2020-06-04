@@ -7,7 +7,7 @@
         <div class="font-weight-bold">{{ info.name }}</div>
         <div class="row no-gutters mt-1">
           <div class="box-icon">
-            <span :style="{ backgroundImage : 'url('+ iconbase +')' }"/>
+            <span :style="{ backgroundImage : 'url('+ iconbase +')' }" />
           </div>
           <div class="col text-left">
             <div><b>{{ info.base }}</b>/{{ info.quote }}</div>
@@ -20,7 +20,7 @@
       <div 
         v-if="ticker.price" 
         :class="[(ticker.percent < 0)?'down':'up', 'col-5','text-right']">
-        <div class="coin-per"><span class="indicator"/><span>{{ ticker.percent }}%</span></div>
+        <div class="coin-per"><span class="indicator" /><span>{{ ticker.percent }}%</span></div>
         <div class="coin-chg">{{ parseFloat(ticker.chg).toFixed((info.quote === 'USDT') ? 3 : 8) }} </div>
         <div><span class="text-secondary">Vol:</span> <span class="text-dark">{{ ticker.vol }}</span></div>
       </div>
@@ -34,7 +34,7 @@
           @click.stop="onDropDown">
           <i 
             class="fa fa-ellipsis-v" 
-            aria-hidden="true"/>
+            aria-hidden="true" />
         </span>
         <div 
           v-if="showDropDown" 
@@ -54,7 +54,7 @@
       <Sparkline 
         :cdata="ticker.price" 
         :width="380" 
-        :height="90"/>
+        :height="90" />
     </div>
   </div>
 </template>

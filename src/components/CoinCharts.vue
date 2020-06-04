@@ -18,7 +18,7 @@
       <div 
         id="chartdiv" 
         ref="chartdiv" 
-        class="chart-panel col"/>
+        class="chart-panel col" />
       <div class="col-12 p-2 text-right">
         <button 
           :class="[{'active': interval==='1h'}]" 
@@ -41,7 +41,7 @@
     <div 
       v-if="chartLoading" 
       class="spinner">
-      <div class="circle-spinner"/>
+      <div class="circle-spinner" />
     </div>
   </div>
 </template>

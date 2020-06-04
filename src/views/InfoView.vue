@@ -9,7 +9,7 @@
                 <div class="col">
                   <span 
                     :style="{ backgroundImage : `url('https://raw.githubusercontent.com/rainner/binance-watch/master/public/images/icons/${currency.base.toLowerCase()}_.png')` }" 
-                    class="coin-img"/>
+                    class="coin-img" />
                   <div class="coin-name">{{ currency.name }} ({{ currency.base }}) / <span class="small">{{ currency.quote }}</span></div>
                 </div>
               </div>
@@ -24,7 +24,7 @@
                   class="col-md-6 chg-block">
                   <div class="text-dark small text-right">24h Chg</div>
                   <div class="text-right d-flex justify-content-end">
-                    <span class="indicator"/><span>{{ ticker.percent }}%</span>
+                    <span class="indicator" /><span>{{ ticker.percent }}%</span>
                   </div>
                   <div class="icon-chg text-right">
                     {{ parseFloat(ticker.chg).toFixed((currency.quote === 'USDT') ? 3 : 8) }} <span class="x-small">{{ currency.quote }}</span>
@@ -43,12 +43,12 @@
             </div>
           </div>
           <div class="col-12 mb-3">
-            <coin-charts :symbol="symbol"/>
+            <coin-charts :symbol="symbol" />
           </div>
         </div>
       </div>
       <div class="col news-section">
-        <crypto-news/>
+        <crypto-news />
       </div>
     </div>
   </div>
