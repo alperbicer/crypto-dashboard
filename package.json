@@ -1,5 +1,5 @@
 {
-  "name": "vue-crypto-dashboard",
+  "name": "crypto-map-dashboard",
   "description": "Vue Cryptocurrency Dashboard",
   "author": "JayeshLab <helloiamjayesh@gmail.com>",
   "version": "0.2.0",
@@ -14,13 +14,6 @@
     "vue",
     "vue.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JayeshLab/vue-crypto-dashboard.git"
-  },
-  "bugs": {
-    "url": "https://github.com/JayeshLab/vue-crypto-dashboard/issues"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
