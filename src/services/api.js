@@ -14,7 +14,7 @@ export default class Api {
       trade: (symbol) => `${symbol.toLowerCase()}@trade`,
       ticker: (symbol) => `${symbol.toLowerCase()}@ticker`,
       miniTicker: (symbol) => `${symbol.toLowerCase()}@miniTicker`,
-      allMiniTicker: () => `!miniTicker@arr`,
+      allMiniTicker: () => '!miniTicker@arr',
       allTickers: () => '!ticker@arr',
     };
   }
@@ -40,7 +40,7 @@ export default class Api {
     return this.streams[fname].call(null, ...args);
   }
   removeSubscription(endpoint){
-    if(this.subscription[endpoint]) {
+    if (this.subscription[endpoint]) {
       delete this.subscription[endpoint];
     }
   }
@@ -48,8 +48,8 @@ export default class Api {
     const endpoint = this.caller(type, ...args);
     const path = (isCombined ? this._combinedBaseUrl : this._baseUrl) + endpoint;
     const ws = this.subscription[path];
-    if(ws) {
-      ws.close(1000, "");
+    if (ws) {
+      ws.close(1000, '');
     }
   }
   closeAll() {

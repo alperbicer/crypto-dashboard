@@ -56,7 +56,7 @@ export default {
     ...mapState(['currencies']),
   },
   mounted(){
-    if(this.currencies) {
+    if (this.currencies) {
       this.currencies.forEach(currency => {
         subscribeSymbol(currency.symbol);
       });
@@ -67,10 +67,10 @@ export default {
       this.baseCurrency = {};
     },
     addCoinPair() {
-      if(!isEmpty(this.baseCurrency)){
+      if (!isEmpty(this.baseCurrency)){
         const symbol = `${this.baseCurrency.value}${this.quote}`;
         subscribeSymbol(symbol);
-        this.$store.commit('ADD_COIN_PAIR', { "symbol": symbol, "base": this.baseCurrency.value, "quote": this.quote, "name": this.baseCurrency.name });
+        this.$store.commit('ADD_COIN_PAIR', { 'symbol': symbol, 'base': this.baseCurrency.value, 'quote': this.quote, 'name': this.baseCurrency.name });
       }
     },
   },

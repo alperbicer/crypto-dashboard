@@ -24,7 +24,7 @@ export default new Vuex.Store({
       Vue.set(state.tickers, payload.symbol, payload);
     },
     ADD_COIN_PAIR: (state, payload) => {
-      if(!state.tickers[payload.symbol]) {
+      if (!state.tickers[payload.symbol]) {
         state.currencies.push(payload);
         localStorage.setItem('vue-crypto-currencies-new', JSON.stringify(state.currencies));
       }

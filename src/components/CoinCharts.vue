@@ -86,165 +86,165 @@ export default {
       chartLoading: true,
       chartType: 'cs',
       candleStickChartConfig: {
-        "type": "stock",
-        "theme": "light",
-        "dataDateFormat": "YYYY-MM-DD HH",
-        "mouseWheelZoomEnabled": true,
-        "pathToImages": "http://cdn.amcharts.com/lib/3/images/",
-        "categoryAxesSettings": {
-          "minPeriod": "hh",
+        'type': 'stock',
+        'theme': 'light',
+        'dataDateFormat': 'YYYY-MM-DD HH',
+        'mouseWheelZoomEnabled': true,
+        'pathToImages': 'http://cdn.amcharts.com/lib/3/images/',
+        'categoryAxesSettings': {
+          'minPeriod': 'hh',
         },
-        "dataSets": [{
-          "fieldMappings": [{
-            "fromField": "open",
-            "toField": "open",
+        'dataSets': [{
+          'fieldMappings': [{
+            'fromField': 'open',
+            'toField': 'open',
           }, {
-            "fromField": "close",
-            "toField": "close",
+            'fromField': 'close',
+            'toField': 'close',
           }, {
-            "fromField": "high",
-            "toField": "high",
+            'fromField': 'high',
+            'toField': 'high',
           }, {
-            "fromField": "low",
-            "toField": "low",
+            'fromField': 'low',
+            'toField': 'low',
           }, {
-            "fromField": "volume",
-            "toField": "volume",
+            'fromField': 'volume',
+            'toField': 'volume',
           }],
-          "color": "#7f8da9",
-          "dataProvider": this.chartData,
-          "title": this.symbol,
-          "categoryField": "date",
+          'color': '#7f8da9',
+          'dataProvider': this.chartData,
+          'title': this.symbol,
+          'categoryField': 'date',
         }],
-        "panels": [{
-          "title": "Price",
-          "showCategoryAxis": true,
-          "percentHeight": 70,
-          "valueAxes": [{
-            "id": "v1",
-            "dashLength": 5,
+        'panels': [{
+          'title': 'Price',
+          'showCategoryAxis': true,
+          'percentHeight': 70,
+          'valueAxes': [{
+            'id': 'v1',
+            'dashLength': 5,
           }],
-          "categoryAxis": {
-            "dashLength": 5,
+          'categoryAxis': {
+            'dashLength': 5,
           },
-          "stockGraphs": [{
-            "type": "candlestick",
-            "id": "g1",
-            "openField": "open",
-            "closeField": "close",
-            "highField": "high",
-            "lowField": "low",
-            "valueField": "close",
-            "lineColor": "#00a928",
-            "fillColors": "#00a928",
-            "negativeLineColor": "#db4c3c",
-            "negativeFillColors": "#db4c3c",
-            "fillAlphas": 1,
-            "useDataSetColors": false,
-            "showBalloon": true,
-            "useNegativeColorIfDown": false,
-            "balloonText": "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>",
+          'stockGraphs': [{
+            'type': 'candlestick',
+            'id': 'g1',
+            'openField': 'open',
+            'closeField': 'close',
+            'highField': 'high',
+            'lowField': 'low',
+            'valueField': 'close',
+            'lineColor': '#00a928',
+            'fillColors': '#00a928',
+            'negativeLineColor': '#db4c3c',
+            'negativeFillColors': '#db4c3c',
+            'fillAlphas': 1,
+            'useDataSetColors': false,
+            'showBalloon': true,
+            'useNegativeColorIfDown': false,
+            'balloonText': 'Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>',
           }],
-          "stockLegend": {
-            "valueTextRegular": undefined,
-            "periodValueTextComparing": "[[percents.value.close]]%",
+          'stockLegend': {
+            'valueTextRegular': undefined,
+            'periodValueTextComparing': '[[percents.value.close]]%',
           },
         },
         {
-          "title": "Volume",
-          "percentHeight": 30,
-          "marginTop": 1,
-          "showCategoryAxis": true,
-          "valueAxes": [{
-            "dashLength": 5,
+          'title': 'Volume',
+          'percentHeight': 30,
+          'marginTop': 1,
+          'showCategoryAxis': true,
+          'valueAxes': [{
+            'dashLength': 5,
           }],
-          "categoryAxis": {
-            "dashLength": 5,
+          'categoryAxis': {
+            'dashLength': 5,
           },
-          "stockGraphs": [{
-            "valueField": "volume",
-            "type": "column",
-            "fillColors": '#7f8da9',
-            "showBalloon": true,
-            "fillAlphas": 1,
+          'stockGraphs': [{
+            'valueField': 'volume',
+            'type': 'column',
+            'fillColors': '#7f8da9',
+            'showBalloon': true,
+            'fillAlphas': 1,
           }],
-          "stockLegend": {
-            "markerType": "none",
-            "markerSize": 0,
-            "labelText": "",
-            "periodValueTextRegular": "[[value.close]]",
+          'stockLegend': {
+            'markerType': 'none',
+            'markerSize': 0,
+            'labelText': '',
+            'periodValueTextRegular': '[[value.close]]',
           },
         },
         ],
-        "chartScrollbarSettings": {
-          "graph": "g1",
-          "graphType": "line",
-          "usePeriod": "DD",
+        'chartScrollbarSettings': {
+          'graph': 'g1',
+          'graphType': 'line',
+          'usePeriod': 'DD',
         },
-        "chartCursorSettings": {
-          "valueLineBalloonEnabled": true,
-          "valueLineEnabled": true,
+        'chartCursorSettings': {
+          'valueLineBalloonEnabled': true,
+          'valueLineEnabled': true,
         },
-        "legendSettings": {
-          "useMarkerColorForLabels": true,
+        'legendSettings': {
+          'useMarkerColorForLabels': true,
         },
       },
       lineCartConfig: {
-        "type": "stock",
-        "theme": "light",
-        "dataDateFormat": "YYYY-MM-DD HH",
-        "mouseWheelZoomEnabled": true,
-        "pathToImages": "http://cdn.amcharts.com/lib/3/images/",
-        "categoryAxesSettings": {
-          "minPeriod": "hh",
+        'type': 'stock',
+        'theme': 'light',
+        'dataDateFormat': 'YYYY-MM-DD HH',
+        'mouseWheelZoomEnabled': true,
+        'pathToImages': 'http://cdn.amcharts.com/lib/3/images/',
+        'categoryAxesSettings': {
+          'minPeriod': 'hh',
         },
-        "dataSets": [{
-          "color": "#00a928",
-          "fieldMappings": [ {
-            "fromField": "value",
-            "toField": "value",
+        'dataSets': [{
+          'color': '#00a928',
+          'fieldMappings': [ {
+            'fromField': 'value',
+            'toField': 'value',
           } ],
-          "dataProvider": this.chartData,
-          "categoryField": "date",
+          'dataProvider': this.chartData,
+          'categoryField': 'date',
         }],
-        "panels": [ {
-          "showCategoryAxis": true,
-          "title": "Price",
-          "stockGraphs": [ {
-            "id": "g1",
-            "valueField": "value",
-            "useDataSetColors": false,
+        'panels': [ {
+          'showCategoryAxis': true,
+          'title': 'Price',
+          'stockGraphs': [ {
+            'id': 'g1',
+            'valueField': 'value',
+            'useDataSetColors': false,
           } ],
-          "stockLegend": {
-            "periodValueTextRegular": "[[value.close]]",
+          'stockLegend': {
+            'periodValueTextRegular': '[[value.close]]',
           },
         },
         {
-          "title": "Volume",
-          "percentHeight": 30,
-          "showCategoryAxis": true,
-          "stockGraphs": [ {
-            "valueField": "volume",
-            "type": "column",
-            "showBalloon": false,
-            "fillAlphas": 1,
+          'title': 'Volume',
+          'percentHeight': 30,
+          'showCategoryAxis': true,
+          'stockGraphs': [ {
+            'valueField': 'volume',
+            'type': 'column',
+            'showBalloon': false,
+            'fillAlphas': 1,
           } ],
-          "stockLegend": {
-            "periodValueTextRegular": "[[value.close]]",
+          'stockLegend': {
+            'periodValueTextRegular': '[[value.close]]',
           },
         },
         ],
-        "chartScrollbarSettings": {
-          "graph": "g1",
-          "graphType": "line",
-          "usePeriod": "DD",
+        'chartScrollbarSettings': {
+          'graph': 'g1',
+          'graphType': 'line',
+          'usePeriod': 'DD',
         },
-        "chartCursorSettings": {
-          "valueLineBalloonEnabled": true,
-          "valueLineEnabled": true,
+        'chartCursorSettings': {
+          'valueLineBalloonEnabled': true,
+          'valueLineEnabled': true,
         },
-        "legendSettings": {
-          "useMarkerColorForLabels": true,
+        'legendSettings': {
+          'useMarkerColorForLabels': true,
         },
       },
     };
@@ -253,7 +253,7 @@ export default {
     this.fetchChartData();
   },
   beforeDestroy() {
-    if(this.chart) {
+    if (this.chart) {
       this.chart.clear();
       this.chart = null;
       this.chartData = [];
@@ -261,7 +261,7 @@ export default {
   },
   methods: {
     zoomChart() {
-      if(this.chartData.length > 50){
+      if (this.chartData.length > 50){
         this.chart.scrollbarChart.zoomToIndexes(this.chartData.length - 40, this.chartData.length - 1);
       }
     },
@@ -276,13 +276,13 @@ export default {
           response.json().then(function (data) {
             this.chartData = data.map((val) => {
               return {
-                "date": new Date(val[0]),
-                "open": parseFloat(val[1]),
-                "high": parseFloat(val[2]),
-                "low": parseFloat(val[3]),
-                "close": parseFloat(val[4]),
-                "volume": parseFloat(val[5]),
-                "value": parseFloat(val[4]),
+                'date': new Date(val[0]),
+                'open': parseFloat(val[1]),
+                'high': parseFloat(val[2]),
+                'low': parseFloat(val[3]),
+                'close': parseFloat(val[4]),
+                'volume': parseFloat(val[5]),
+                'value': parseFloat(val[4]),
               };
             });
             if (isUpdate) {
@@ -310,48 +310,48 @@ export default {
       const panel = this.chart.panels[0];
       dataSet.fieldMappings = [];
       dataSet.fieldMappings.push({
-        fromField: "close",
-        toField: "close",
+        fromField: 'close',
+        toField: 'close',
       });
       dataSet.fieldMappings.push({
-        fromField: "open",
-        toField: "open",
+        fromField: 'open',
+        toField: 'open',
       });
       dataSet.fieldMappings.push({
-        fromField: "high",
-        toField: "high",
+        fromField: 'high',
+        toField: 'high',
       });
       dataSet.fieldMappings.push({
-        fromField: "low",
-        toField: "low",
+        fromField: 'low',
+        toField: 'low',
       });
       dataSet.fieldMappings.push({
-        fromField: "volume",
-        toField: "volume",
+        fromField: 'volume',
+        toField: 'volume',
       });
       dataSet.fieldMappings.push({
-        fromField: "value",
-        toField: "value",
+        fromField: 'value',
+        toField: 'value',
       });
       panel.stockGraphs[0] = {
-        id: "g1",
-        type: "candlestick",
-        balloonText: "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>",
-        closeField: "close",
-        fillColors: "#00a928",
-        highField: "high",
-        lineColor: "#00a928",
+        id: 'g1',
+        type: 'candlestick',
+        balloonText: 'Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>',
+        closeField: 'close',
+        fillColors: '#00a928',
+        highField: 'high',
+        lineColor: '#00a928',
         lineAlpha: 1,
-        lowField: "low",
+        lowField: 'low',
         fillAlphas: 1,
-        negativeFillColors: "#db4c3c",
-        negativeLineColor: "#db4c3c",
-        openField: "open",
-        valueField: "value",
+        negativeFillColors: '#db4c3c',
+        negativeLineColor: '#db4c3c',
+        openField: 'open',
+        valueField: 'value',
         proCandlesticks: false,
         useDataSetColors: false,
       };
-      panel.stockLegend.valueTextRegular = "[[close]] ";
+      panel.stockLegend.valueTextRegular = '[[close]] ';
       this.chart.validateNow();
     },
     toLineChart() {
@@ -360,135 +360,135 @@ export default {
       const panel = this.chart.panels[0];
       dataSet.fieldMappings = [];
       dataSet.fieldMappings.push({
-        fromField: "value",
-        toField: "value",
+        fromField: 'value',
+        toField: 'value',
       });
       dataSet.fieldMappings.push({
-        fromField: "volume",
-        toField: "volume",
+        fromField: 'volume',
+        toField: 'volume',
       });
       panel.stockGraphs[0] = {
-        id: "g1",
-        type: "line",
-        valueField: "value",
+        id: 'g1',
+        type: 'line',
+        valueField: 'value',
         lineThickness: 1,
         useDataSetColors: false,
-        lineColor: "#00a928",
+        lineColor: '#00a928',
         showBalloon: true,
-        balloonText: "<b>[[value]]</b>",
+        balloonText: '<b>[[value]]</b>',
       };
-      panel.stockLegend.periodValueTextRegular = "[[value.close]] ";
+      panel.stockLegend.periodValueTextRegular = '[[value.close]] ';
       this.chart.validateNow();
     },
     showChart() {
-      this.chart = window.AmCharts.makeChart("chartdiv", {
-        "type": "stock",
-        "theme": "light",
-        "dataDateFormat": "YYYY-MM-DD HH",
-        "mouseWheelZoomEnabled": true,
-        "pathToImages": "http://cdn.amcharts.com/lib/3/images/",
-        "categoryAxesSettings": {
-          "minPeriod": "hh",
+      this.chart = window.AmCharts.makeChart('chartdiv', {
+        'type': 'stock',
+        'theme': 'light',
+        'dataDateFormat': 'YYYY-MM-DD HH',
+        'mouseWheelZoomEnabled': true,
+        'pathToImages': 'http://cdn.amcharts.com/lib/3/images/',
+        'categoryAxesSettings': {
+          'minPeriod': 'hh',
         },
-        "dataSets": [{
-          "fieldMappings": [{
-            "fromField": "open",
-            "toField": "open",
+        'dataSets': [{
+          'fieldMappings': [{
+            'fromField': 'open',
+            'toField': 'open',
           }, {
-            "fromField": "close",
-            "toField": "close",
+            'fromField': 'close',
+            'toField': 'close',
           }, {
-            "fromField": "high",
-            "toField": "high",
+            'fromField': 'high',
+            'toField': 'high',
           }, {
-            "fromField": "low",
-            "toField": "low",
+            'fromField': 'low',
+            'toField': 'low',
           }, {
-            "fromField": "volume",
-            "toField": "volume",
+            'fromField': 'volume',
+            'toField': 'volume',
           }, {
-            "fromField": "value",
-            "toField": "value",
+            'fromField': 'value',
+            'toField': 'value',
           }],
-          "color": "#7f8da9",
-          "dataProvider": this.chartData,
-          "title": this.symbol,
-          "categoryField": "date",
+          'color': '#7f8da9',
+          'dataProvider': this.chartData,
+          'title': this.symbol,
+          'categoryField': 'date',
         }],
-        "panels": [
+        'panels': [
           {
-            "title": "Price",
-            "showCategoryAxis": true,
-            "percentHeight": 70,
-            "valueAxes": [{
-              "id": "v1",
-              "dashLength": 5,
+            'title': 'Price',
+            'showCategoryAxis': true,
+            'percentHeight': 70,
+            'valueAxes': [{
+              'id': 'v1',
+              'dashLength': 5,
             }],
-            "categoryAxis": {
-              "dashLength": 5,
-              "parseDates": true,
+            'categoryAxis': {
+              'dashLength': 5,
+              'parseDates': true,
             },
-            "stockGraphs": [{
-              "type": "candlestick",
-              "id": "g1",
-              "openField": "open",
-              "closeField": "close",
-              "highField": "high",
-              "lowField": "low",
-              "valueField": "close",
-              "lineColor": "#00a928",
-              "fillColors": "#00a928",
-              "negativeLineColor": "#db4c3c",
-              "negativeFillColors": "#db4c3c",
-              "fillAlphas": 1,
-              "useDataSetColors": false,
-              "showBalloon": true,
-              "useNegativeColorIfDown": false,
-              "balloonText": "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>",
+            'stockGraphs': [{
+              'type': 'candlestick',
+              'id': 'g1',
+              'openField': 'open',
+              'closeField': 'close',
+              'highField': 'high',
+              'lowField': 'low',
+              'valueField': 'close',
+              'lineColor': '#00a928',
+              'fillColors': '#00a928',
+              'negativeLineColor': '#db4c3c',
+              'negativeFillColors': '#db4c3c',
+              'fillAlphas': 1,
+              'useDataSetColors': false,
+              'showBalloon': true,
+              'useNegativeColorIfDown': false,
+              'balloonText': 'Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b>',
             }],
-            "stockLegend": {
-              "valueTextRegular": undefined,
-              "periodValueTextComparing": "[[percents.value.close]]%",
+            'stockLegend': {
+              'valueTextRegular': undefined,
+              'periodValueTextComparing': '[[percents.value.close]]%',
             },
           },
           {
-            "title": "Volume",
-            "percentHeight": 30,
-            "marginTop": 1,
-            "showCategoryAxis": true,
-            "valueAxes": [{
-              "dashLength": 5,
+            'title': 'Volume',
+            'percentHeight': 30,
+            'marginTop': 1,
+            'showCategoryAxis': true,
+            'valueAxes': [{
+              'dashLength': 5,
             }],
-            "categoryAxis": {
-              "dashLength": 5,
+            'categoryAxis': {
+              'dashLength': 5,
             },
-            "stockGraphs": [{
-              "valueField": "volume",
-              "type": "column",
-              "fillColors": '#7f8da9',
-              "showBalloon": true,
-              "fillAlphas": 1,
+            'stockGraphs': [{
+              'valueField': 'volume',
+              'type': 'column',
+              'fillColors': '#7f8da9',
+              'showBalloon': true,
+              'fillAlphas': 1,
             }],
-            "stockLegend": {
-              "markerType": "none",
-              "markerSize": 0,
-              "labelText": "",
-              "periodValueTextRegular": "[[value.close]]",
+            'stockLegend': {
+              'markerType': 'none',
+              'markerSize': 0,
+              'labelText': '',
+              'periodValueTextRegular': '[[value.close]]',
             },
           },
         ],
-        "chartScrollbarSettings": {
-          "graph": "g1",
-          "graphType": "line",
-          "usePeriod": "DD",
+        'chartScrollbarSettings': {
+          'graph': 'g1',
+          'graphType': 'line',
+          'usePeriod': 'DD',
         },
-        "chartCursorSettings": {
-          "valueBalloonsEnabled": true,
-          "valueLineBalloonEnabled": true,
-          "valueLineEnabled": true,
+        'chartCursorSettings': {
+          'valueBalloonsEnabled': true,
+          'valueLineBalloonEnabled': true,
+          'valueLineEnabled': true,
         },
-        "legendSettings": {
-          "useMarkerColorForLabels": true,
+        'legendSettings': {
+          'useMarkerColorForLabels': true,
         },
       });
     },

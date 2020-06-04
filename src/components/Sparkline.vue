@@ -74,7 +74,7 @@ export default {
     },
     preserveAspectRatio: {
       type: String,
-      default: "none",
+      default: 'none',
     },
     cdata: {
       type: Number,
@@ -106,27 +106,27 @@ export default {
     },
     fillPoints() {
       return this.linePoints.concat([
-        "L" + this.pt[this.pt.length - 1].x, this.height - 0,
+        'L' + this.pt[this.pt.length - 1].x, this.height - 0,
         0, this.height - 0,
         0, this.pt[0].y,
       ]);
     },
     lineStyle() {
       return {
-        stroke: "slategray",
+        stroke: 'slategray',
         strokeWidth: 2,
-        strokeLinejoin: "round",
-        strokeLinecap: "round",
-        fill: "none",
+        strokeLinejoin: 'round',
+        strokeLinecap: 'round',
+        fill: 'none',
       };
     },
     fillStyle() {
       return {
-        stroke: "none",
-        strokeWidth: "0",
+        stroke: 'none',
+        strokeWidth: '0',
         fillOpacity: 0.1,
-        fill: "slategray",
-        pointerEvents: "auto",
+        fill: 'slategray',
+        pointerEvents: 'auto',
       };
     },
   },
@@ -136,13 +136,13 @@ export default {
       handler: function (value) {
         this.prev = null;
         const l = this.lineData.length;
-        if(l === 0) {
+        if (l === 0) {
           this.lineData = new Array(1).fill(0);
         }
         else {
-          if(l === 1 && this.lineData[0] === 0) { this.lineData.pop(); }
+          if (l === 1 && this.lineData[0] === 0) { this.lineData.pop(); }
           this.lineData.push(value);
-          if(l > this.limit - 1) {
+          if (l > this.limit - 1) {
             this.lineData.shift();
           }
         }
@@ -164,7 +164,7 @@ export default {
         res = [p.x, p.y];
       } else {
         const len = (p.x - this.prev.x) * this.smooth;
-        res = [ "C",
+        res = [ 'C',
           this.prev.x + len,
           this.prev.y,
           p.x - len,

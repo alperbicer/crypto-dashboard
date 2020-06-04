@@ -71,11 +71,11 @@ export default {
   name: 'InfoView',
   filters: {
     priceformat: (value) => {
-      if(!value) return "";
+      if (!value) return '';
       return parseFloat(value).toLocaleString();
     },
     timeformat: (value) => {
-      if(!value) return "";
+      if (!value) return '';
       const dt = new Date(value);
       return `${dt.getDate()} ${months[dt.getMonth()]} ${dt.toTimeString().split(' ')[0]}`;
     },
@@ -89,10 +89,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-    };
   },
   computed: {
     currency() {

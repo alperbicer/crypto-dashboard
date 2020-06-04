@@ -11,7 +11,7 @@ export default {
   },
   created() {
     if (this.$workbox) {
-      this.$workbox.addEventListener("waiting", () => {
+      this.$workbox.addEventListener('waiting', () => {
         this.showUpgradeUI = true;
       });
     }
@@ -19,7 +19,7 @@ export default {
   methods: {
     async accept() {
       this.showUpgradeUI = false;
-      await this.$workbox.messageSW({ type: "SKIP_WAITING" });
+      await this.$workbox.messageSW({ type: 'SKIP_WAITING' });
     },
   },
 };

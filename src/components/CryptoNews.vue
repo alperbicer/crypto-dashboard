@@ -47,7 +47,7 @@ export default {
       return format(value * 1000);
     },
     tags: function (value){
-      if(!value) return '';
+      if (!value) return '';
       return value.split('|').join(', ');
     },
   },
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     truncateText(value) {
-      if(value.length > 135) {
+      if (value.length > 135) {
         const substr = value.substring(0, 135);
         return  substr.substring(0, substr.lastIndexOf(' ')) + ' ...';
       }
@@ -80,7 +80,7 @@ export default {
       let response = await fetch('https://min-api.cryptocompare.com/data/v2/news/?lang=EN');
       if (response.ok) {
         let json = await response.json();
-        this.news = json["Data"];
+        this.news = json['Data'];
       }
     },
   },

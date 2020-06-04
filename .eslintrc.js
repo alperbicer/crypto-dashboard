@@ -9,16 +9,18 @@ module.exports = {
     'plugin:vue/recommended',
   ],
   rules: {
+    'keyword-spacing': ['error', { 'before': true }],
+    quotes: ['error', 'single', { 'avoidEscape': true }],
     semi: ['error', 'always'],
     'semi-spacing': ['error', { before: false, after: true }],
     'semi-style': ['error', 'last'],
     'vue/no-v-html': 'off',
-    "vue/html-closing-bracket-spacing": ["error", {
-      "startTag": "never",
-      "endTag": "never",
-      "selfClosingTag": "always",
+    'vue/html-closing-bracket-spacing': ['error', {
+      'startTag': 'never',
+      'endTag': 'never',
+      'selfClosingTag': 'always',
     }],
-    'object-curly-spacing': ["error", "always", { "objectsInObjects": false }],
+    'object-curly-spacing': ['error', 'always', { 'objectsInObjects': false }],
     'space-before-function-paren': ['error', {
       anonymous: 'always',
       named: 'never',
@@ -50,7 +52,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/no-extraneous-dependencies': 'off',
     indent: ['error', 2],
-    "vue/html-indent": ["error", 2],
+    'vue/html-indent': ['error', 2],
     // 'import/order': ['error', {
     //   groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
     //   'newlines-between': 'never',
