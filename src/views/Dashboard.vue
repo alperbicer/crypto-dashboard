@@ -35,7 +35,7 @@
 import vSelect from 'vue-select';
 import coins from '@/assets/group.json';
 import CryptoBoard from '@/views/CryptoBoard.vue';
-import { isEmpty } from '../util/Utility';
+import { isEmpty } from '../utils/utility';
 import { subscribeSymbol } from '../services/binance';
 import { mapState } from 'vuex';
 export default {
