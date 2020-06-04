@@ -8,7 +8,7 @@
       >
         <i class="fa fa-angle-left fa-2x" />
       </button>
-      <span class="page-title">VUE CRYPTO DASHBOARD</span>
+      <span class="page-title">CRYPTO MAP DASHBOARD</span>
     </header>
     <div class="page-container">
       <transition 
