@@ -10,7 +10,6 @@ export default {
     LayoutPage,
   },
   created() {
-    debugger;
     if (this.$workbox) {
       this.$workbox.addEventListener('waiting', () => {
         this.showUpgradeUI = true;

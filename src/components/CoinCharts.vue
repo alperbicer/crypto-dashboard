@@ -66,9 +66,6 @@
   </div>
 </template>
 <script>
-import 'amcharts3/amcharts/amcharts';
-import 'amcharts3/amcharts/serial';
-import 'amstock3/amcharts/amstock';
 // var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 export default {
   name: 'CoinCharts',
@@ -248,6 +245,15 @@ export default {
         },
       },
     };
+  },
+  async created() {
+    await import('amcharts3/amcharts/amcharts');
+    await import('amcharts3/amcharts/serial');
+    await import('amstock3/amcharts/amstock');
+    if (this.error) {
+      const logger = 
+      logger.error(JSON.stringify(this.error));
+    }
   },
   mounted() {
     this.fetchChartData();
