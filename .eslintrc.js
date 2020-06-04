@@ -9,9 +9,10 @@ module.exports = {
     'plugin:vue/recommended',
   ],
   rules: {
+    'vue/no-v-html': 'off',
     "vue/html-closing-bracket-spacing": ["error", {
-      "startTag": "always" | "never",
-      "endTag": "always" | "never",
+      "startTag": "never",
+      "endTag": "never",
       "selfClosingTag": "always",
     }],
     'object-curly-spacing': ["error", "always", { "objectsInObjects": false }],

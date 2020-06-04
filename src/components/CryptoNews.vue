@@ -1,15 +1,19 @@
 <template>
   <section class="news">
-    <header class="news-header">Latest News</header>
+    <header class="news-header">
+      Latest News
+    </header>
     <div class="news-block">
       <div 
         v-for="(article, index) in news" 
         :key="index" 
-        class="news-item">
+        class="news-item"
+      >
         <div class="thumb-img">
           <a 
             :href="article.url" 
-            target="_blank">
+            target="_blank"
+          >
             <img :src="article.imageurl">
           </a>
         </div>
@@ -17,12 +21,17 @@
           <h6 class="news-title">
             <a 
               :href="article.url" 
-              target="_blank">{{ article.title }}</a>
+              target="_blank"
+            >{{ article.title }}</a>
           </h6>
           <p v-html="truncateText(article.body)" />
           <div class="news-data">
-            <div class="news-source">{{ article.source_info.name }}</div>
-            <div class="news-date">{{ article.published_on | time }}</div>
+            <div class="news-source">
+              {{ article.source_info.name }}
+            </div>
+            <div class="news-date">
+              {{ article.published_on | time }}
+            </div>
           </div>
         </div>
       </div>
@@ -72,10 +81,6 @@ export default {
       if (response.ok) {
         let json = await response.json();
         this.news = json["Data"];
-        console.log(json);
-      }
-      else {
-        console.log('Fetch Error :-S', response.status);
       }
     },
   },

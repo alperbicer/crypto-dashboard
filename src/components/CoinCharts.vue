@@ -7,40 +7,60 @@
             <button 
               :class="[{'active': chartType==='cs'}]" 
               class="btn btn-primary btn-sm mr-2" 
-              @click="toCandleStickChart">Candlestick Chart</button>
+              @click="toCandleStickChart"
+            >
+              Candlestick Chart
+            </button>
             <button 
               :class="[{'active': chartType==='lc'}]" 
               class="btn btn-primary btn-sm" 
-              @click="toLineChart">Line Chart</button>
+              @click="toLineChart"
+            >
+              Line Chart
+            </button>
           </div>
         </div>
       </div>
       <div 
         id="chartdiv" 
         ref="chartdiv" 
-        class="chart-panel col" />
+        class="chart-panel col"
+      />
       <div class="col-12 p-2 text-right">
         <button 
           :class="[{'active': interval==='1h'}]" 
           class="btn btn-primary btn-sm mr-2" 
-          @click="updateTimeInterval('1h')">1H</button>
+          @click="updateTimeInterval('1h')"
+        >
+          1H
+        </button>
         <button 
           :class="[{'active': interval==='1d'}]" 
           class="btn btn-primary btn-sm mr-2" 
-          @click="updateTimeInterval('1d')">1D</button>
+          @click="updateTimeInterval('1d')"
+        >
+          1D
+        </button>
         <button 
           :class="[{'active': interval==='1w'}]" 
           class="btn btn-primary btn-sm mr-2" 
-          @click="updateTimeInterval('1w')">1W</button>
+          @click="updateTimeInterval('1w')"
+        >
+          1W
+        </button>
         <button 
           :class="[{'active': interval==='1M'}]" 
           class="btn btn-primary btn-sm mr-2" 
-          @click="updateTimeInterval('1M')">1M</button>
+          @click="updateTimeInterval('1M')"
+        >
+          1M
+        </button>
       </div>
     </div>
     <div 
       v-if="chartLoading" 
-      class="spinner">
+      class="spinner"
+    >
       <div class="circle-spinner" />
     </div>
   </div>
@@ -251,7 +271,6 @@ export default {
       fetch(`https://api.binance.com/api/v1/klines?symbol=${this.symbol}&interval=${this.interval}`).then(
         function (response) {
           if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' + response.status);
             return;
           }
           response.json().then(function (data) {
@@ -277,9 +296,8 @@ export default {
             this.zoomChart();
           }.bind(this));
         }.bind(this),
-      ).catch(function (err) {
+      ).catch(() => {
         this.chartLoading = false;
-        console.log('Fetch Error :-S', err);
       });
     },
     updateTimeInterval(ti) {

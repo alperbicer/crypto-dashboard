@@ -3,10 +3,12 @@
     <div 
       v-for="(value, index) in currencies" 
       :key="index" 
-      class="card-block">
+      class="card-block"
+    >
       <CurrencyCard 
         :ticker="tickers[value.symbol] || {}" 
-        :info="value" />
+        :info="value"
+      />
     </div>
   </div>
 </template>

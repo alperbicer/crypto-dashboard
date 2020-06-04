@@ -9,20 +9,27 @@
                 <div class="col">
                   <span 
                     :style="{ backgroundImage : `url('https://raw.githubusercontent.com/rainner/binance-watch/master/public/images/icons/${currency.base.toLowerCase()}_.png')` }" 
-                    class="coin-img" />
-                  <div class="coin-name">{{ currency.name }} ({{ currency.base }}) / <span class="small">{{ currency.quote }}</span></div>
+                    class="coin-img"
+                  />
+                  <div class="coin-name">
+                    {{ currency.name }} ({{ currency.base }}) / <span class="small">{{ currency.quote }}</span>
+                  </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <span 
                     :style="{'color': (ticker.pchg && ticker.pchg > 0) ? 'green':'red'}" 
-                    class="price">{{ ticker.price }}<span class="x-small"> {{ currency.quote }}</span></span>
+                    class="price"
+                  >{{ ticker.price }}<span class="x-small"> {{ currency.quote }}</span></span>
                 </div>
                 <div 
                   :class="[(ticker.percent < 0)?'down':'up']" 
-                  class="col-md-6 chg-block">
-                  <div class="text-dark small text-right">24h Chg</div>
+                  class="col-md-6 chg-block"
+                >
+                  <div class="text-dark small text-right">
+                    24h Chg
+                  </div>
                   <div class="text-right d-flex justify-content-end">
                     <span class="indicator" /><span>{{ ticker.percent }}%</span>
                   </div>
@@ -30,7 +37,9 @@
                     {{ parseFloat(ticker.chg).toFixed((currency.quote === 'USDT') ? 3 : 8) }} <span class="x-small">{{ currency.quote }}</span>
                   </div>
                 </div>
-                <div class="col-12 x-small">{{ ticker.time | timeformat }}</div>
+                <div class="col-12 x-small">
+                  {{ ticker.time | timeformat }}
+                </div>
               </div>
             </div>
           </div>

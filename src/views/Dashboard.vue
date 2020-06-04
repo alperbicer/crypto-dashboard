@@ -3,24 +3,30 @@
     <div class="menu-bar">
       <v-select 
         id="base" 
+        v-model="baseCurrency" 
         :options="currencyList[quote]" 
         :clearable="false" 
-        v-model="baseCurrency" 
-        placeholder="Select Token" />
+        placeholder="Select Token"
+      />
       <span class="slash">/</span>
       <v-select 
         id="quote" 
+        v-model="quote" 
         :options="quoteOptions" 
         :searchable="false" 
         :clearable="false" 
-        v-model="quote" 
         style="width: 100px" 
-        @input="resetBase" />
+        @input="resetBase"
+      />
       <button 
         class="add-btn" 
-        @click="addCoinPair"><i 
+        @click="addCoinPair"
+      >
+        <i 
           class="fa fa-plus fa-lg" 
-          aria-hidden="true" /></button>
+          aria-hidden="true"
+        />
+      </button>
     </div>
     <CryptoBoard />
   </div>

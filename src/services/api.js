@@ -20,26 +20,21 @@ export default class Api {
   }
   subscribe(cb, endpoint, isCombined = false) {
     let ws;
-    try {
-      let path = (isCombined ? this._combinedBaseUrl : this._baseUrl) + endpoint;
-      if (this.subscription[path]) {
-        return this.subscription[path];
-      }
-      ws = new WS(path, {
-        timeout: this.timeout,
-        maxAttempts: this.maxAttempts,
-        onopen: e => console.log('Connected!', e),
-        onmessage: e => cb(JSON.parse(e.data)),
-        onreconnect: e => console.log('Reconnecting...', e),
-        onmaximum: e => console.log('Stop Attempting!', e),
-        onclose: e => { console.log('Closed!', e);  this.removeSubscription(e.endpoint)},
-        onerror: e => console.log('Error:', e),
-      });
-      this.subscription[path] = ws
+    let path = (isCombined ? this._combinedBaseUrl : this._baseUrl) + endpoint;
+    if (this.subscription[path]) {
+      return this.subscription[path];
     }
-    catch(ex) {
-      console.log("Error :" + ex)
-    }
+    ws = new WS(path, {
+      timeout: this.timeout,
+      maxAttempts: this.maxAttempts,
+      onopen: () => { },
+      onmessage: e => cb(JSON.parse(e.data)),
+      onreconnect: () => { },
+      onmaximum: () => { },
+      onclose: (e) => { this.removeSubscription(e.endpoint)},
+      onerror: () => { },
+    });
+    this.subscription[path] = ws
   }
   caller(fname, ...args) {
     return this.streams[fname].call(null, ...args)
