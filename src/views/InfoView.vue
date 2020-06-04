@@ -63,21 +63,21 @@
   </div>
 </template>
 <script>
-import CryptoNews from '../components/CryptoNews.vue'
-import CoinCharts from '../components/CoinCharts.vue'
-import { subscribeSymbol } from '../services/binance'
+import CryptoNews from '../components/CryptoNews.vue';
+import CoinCharts from '../components/CoinCharts.vue';
+import { subscribeSymbol } from '../services/binance';
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 export default {
   name: 'InfoView',
   filters: {
     priceformat: (value) => {
       if(!value) return "";
-      return parseFloat(value).toLocaleString()
+      return parseFloat(value).toLocaleString();
     },
     timeformat: (value) => {
       if(!value) return "";
       const dt = new Date(value);
-      return `${dt.getDate()} ${months[dt.getMonth()]} ${dt.toTimeString().split(' ')[0]}`
+      return `${dt.getDate()} ${months[dt.getMonth()]} ${dt.toTimeString().split(' ')[0]}`;
     },
   },
   components: {
@@ -96,15 +96,15 @@ export default {
   },
   computed: {
     currency() {
-      return this.$store.getters.getSymbolById(this.symbol) || {}
+      return this.$store.getters.getSymbolById(this.symbol) || {};
     },
     ticker() {
       debugger;
-      return this.$store.getters.getTickerById(this.symbol) || {}
+      return this.$store.getters.getTickerById(this.symbol) || {};
     },
   },
   mounted() {
     subscribeSymbol(this.symbol);
   },
-}
+};
 </script>

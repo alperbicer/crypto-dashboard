@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       currentPage: 'dashboard',
-    }
+    };
   },
   watch: {
     '$route': {
@@ -38,5 +38,5 @@ export default {
       },
     },
   },
-}
+};
 </script>

@@ -32,12 +32,12 @@
   </div>
 </template>
 <script>
-import vSelect from 'vue-select'
-import coins from '@/assets/group.json'
-import CryptoBoard from '@/views/CryptoBoard.vue'
-import { isEmpty } from '../util/Utility'
-import { subscribeSymbol } from '../services/binance'
-import { mapState } from 'vuex'
+import vSelect from 'vue-select';
+import coins from '@/assets/group.json';
+import CryptoBoard from '@/views/CryptoBoard.vue';
+import { isEmpty } from '../util/Utility';
+import { subscribeSymbol } from '../services/binance';
+import { mapState } from 'vuex';
 export default {
   name: 'Dashboard',
   components: {
@@ -50,7 +50,7 @@ export default {
       quote: 'BNB',
       quoteOptions: ['BNB', 'BTC', 'ETH', 'USDT'],
       baseCurrency: {},
-    }
+    };
   },
   computed: {
     ...mapState(['currencies']),
@@ -64,15 +64,15 @@ export default {
   },
   methods: {
     resetBase() {
-      this.baseCurrency = {}
+      this.baseCurrency = {};
     },
     addCoinPair() {
       if(!isEmpty(this.baseCurrency)){
         const symbol = `${this.baseCurrency.value}${this.quote}`;
         subscribeSymbol(symbol);
-        this.$store.commit('ADD_COIN_PAIR', { "symbol": symbol, "base": this.baseCurrency.value, "quote": this.quote, "name": this.baseCurrency.name })
+        this.$store.commit('ADD_COIN_PAIR', { "symbol": symbol, "base": this.baseCurrency.value, "quote": this.quote, "name": this.baseCurrency.name });
       }
     },
   },
-}
+};
 </script>

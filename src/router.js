@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 Vue.use(Router);
 const router = new Router({
   base: process.env.BASE_URL,
@@ -17,8 +17,8 @@ const router = new Router({
       props: true,
     },
   ],
-})
+});
 router.beforeEach((to, from, next) => {
-  next()
-})
+  next();
+});
 export default router;

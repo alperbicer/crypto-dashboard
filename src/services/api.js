@@ -1,4 +1,4 @@
-import WS from './ws'
+import WS from './ws';
 export default class Api {
   constructor(timeout = 5e3, maxAttempts = 5) {
     this.timeout = timeout;
@@ -31,17 +31,17 @@ export default class Api {
       onmessage: e => cb(JSON.parse(e.data)),
       onreconnect: () => { },
       onmaximum: () => { },
-      onclose: (e) => { this.removeSubscription(e.endpoint)},
+      onclose: (e) => { this.removeSubscription(e.endpoint);},
       onerror: () => { },
     });
-    this.subscription[path] = ws
+    this.subscription[path] = ws;
   }
   caller(fname, ...args) {
-    return this.streams[fname].call(null, ...args)
+    return this.streams[fname].call(null, ...args);
   }
   removeSubscription(endpoint){
     if(this.subscription[endpoint]) {
-      delete this.subscription[endpoint]
+      delete this.subscription[endpoint];
     }
   }
   closeSubscription(type, isCombined = false, ...args) {
@@ -55,9 +55,9 @@ export default class Api {
   closeAll() {
     for (const key in this.subscription) {
       this.subscription[key].close();
-      delete this.subscription[key]
+      delete this.subscription[key];
     }
-    this.subscription = {}
+    this.subscription = {};
   }
   onDepthUpdate(symbol, eventHandler) {
     return this.subscribe(eventHandler, this.streams.depth(symbol));

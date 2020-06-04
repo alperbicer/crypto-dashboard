@@ -13,8 +13,8 @@
   </div>
 </template>
 <script>
-import CurrencyCard from '../components/CurrencyCard.vue'
-import { mapState } from 'vuex'
+import CurrencyCard from '../components/CurrencyCard.vue';
+import { mapState } from 'vuex';
 export default {
   name: 'CryptoBoard',
   components: {
@@ -23,5 +23,5 @@ export default {
   computed: {
     ...mapState(['tickers', 'currencies']),
   },
-}
+};
 </script>

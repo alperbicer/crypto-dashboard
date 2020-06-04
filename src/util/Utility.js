@@ -5,4 +5,4 @@ const isEmpty = function (obj) {
   }
   return true;
 };
-export { isEmpty }
+export { isEmpty };

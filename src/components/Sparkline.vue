@@ -140,13 +140,13 @@ export default {
           this.lineData = new Array(1).fill(0);
         }
         else {
-          if(l === 1 && this.lineData[0] === 0) { this.lineData.pop() }
+          if(l === 1 && this.lineData[0] === 0) { this.lineData.pop(); }
           this.lineData.push(value);
           if(l > this.limit - 1) {
-            this.lineData.shift()
+            this.lineData.shift();
           }
         }
-        this.getDataPoints()
+        this.getDataPoints();
       },
     },
   },
@@ -156,12 +156,12 @@ export default {
         if (obj.y < result[0]) result[0] = obj.y;
         if (obj.y > result[1]) result[1] = obj.y;
         return result;
-      }, [Number.MAX_VALUE, Number.MIN_VALUE])
+      }, [Number.MAX_VALUE, Number.MIN_VALUE]);
     },
     curve(p) {
       let res;
       if (!this.prev) {
-        res = [p.x, p.y]
+        res = [p.x, p.y];
       } else {
         const len = (p.x - this.prev.x) * this.smooth;
         res = [ "C",

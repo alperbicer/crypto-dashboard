@@ -9,6 +9,9 @@ module.exports = {
     'plugin:vue/recommended',
   ],
   rules: {
+    semi: ['error', 'always'],
+    'semi-spacing': ['error', { before: false, after: true }],
+    'semi-style': ['error', 'last'],
     'vue/no-v-html': 'off',
     "vue/html-closing-bracket-spacing": ["error", {
       "startTag": "never",
@@ -79,4 +82,4 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
   },
-}
+};

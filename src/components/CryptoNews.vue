@@ -44,11 +44,11 @@ export default {
   filters: {
     time: function (value) {
       if (!value) return '';
-      return format(value * 1000)
+      return format(value * 1000);
     },
     tags: function (value){
       if(!value) return '';
-      return value.split('|').join(', ')
+      return value.split('|').join(', ');
     },
   },
   data() {
@@ -61,7 +61,7 @@ export default {
     this.getNews();
     this.interval = setInterval(function () {
       this.getNews();
-    }.bind(this), 120000)
+    }.bind(this), 120000);
   },
   beforeDestroy(){
     clearInterval(this.interval);
@@ -84,5 +84,5 @@ export default {
       }
     },
   },
-}
+};
 </script>

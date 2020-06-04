@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import LayoutPage from './layout/LayoutPage.vue'
+import LayoutPage from './layout/LayoutPage.vue';
 export default {
   components: {
     LayoutPage,
@@ -18,9 +18,9 @@ export default {
   },
   methods: {
     async accept() {
-      this.showUpgradeUI = false
+      this.showUpgradeUI = false;
       await this.$workbox.messageSW({ type: "SKIP_WAITING" });
     },
   },
-}
+};
 </script>

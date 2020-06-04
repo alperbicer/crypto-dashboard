@@ -1,5 +1,5 @@
-import Api from './api'
-import store from '../store'
+import Api from './api';
+import store from '../store';
 const wsApi = new Api();
 const subscribeSymbol = function (symbol) {
   wsApi.onTicker(symbol, (ticker) => {
@@ -14,16 +14,16 @@ const subscribeSymbol = function (symbol) {
       time:ticker.E,
       symbol: symbol,
     };
-    store.commit('UPDATE_TICKER', tick)
-  })
+    store.commit('UPDATE_TICKER', tick);
+  });
 };
 const unSubscribeSymbol = function (symbol) {
-  wsApi.closeSubscription('ticker', false, symbol)
+  wsApi.closeSubscription('ticker', false, symbol);
 };
 const subscribeChart = function (symbol, interval) {
-  wsApi.onKline(symbol, interval, () => {})
+  wsApi.onKline(symbol, interval, () => {});
 };
 const unSubscribeChart = function (symbol, interval) {
-  wsApi.closeSubscription('kline', false, symbol, interval)
-}
-export { subscribeSymbol, unSubscribeSymbol, subscribeChart, unSubscribeChart }
+  wsApi.closeSubscription('kline', false, symbol, interval);
+};
+export { subscribeSymbol, unSubscribeSymbol, subscribeChart, unSubscribeChart };

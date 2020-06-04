@@ -66,9 +66,9 @@
   </div>
 </template>
 <script>
-import 'amcharts3/amcharts/amcharts'
-import 'amcharts3/amcharts/serial'
-import 'amstock3/amcharts/amstock'
+import 'amcharts3/amcharts/amcharts';
+import 'amcharts3/amcharts/serial';
+import 'amstock3/amcharts/amstock';
 // var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 export default {
   name: 'CoinCharts',
@@ -247,7 +247,7 @@ export default {
           "useMarkerColorForLabels": true,
         },
       },
-    }
+    };
   },
   mounted() {
     this.fetchChartData();
@@ -266,7 +266,7 @@ export default {
       }
     },
     fetchChartData(isUpdate = false) {
-      this.chartLoading = true
+      this.chartLoading = true;
       // proxyuUrl is done to avoid cross-origin error as it is directly called from javascript.
       fetch(`https://api.binance.com/api/v1/klines?symbol=${this.symbol}&interval=${this.interval}`).then(
         function (response) {
@@ -283,11 +283,11 @@ export default {
                 "close": parseFloat(val[4]),
                 "volume": parseFloat(val[5]),
                 "value": parseFloat(val[4]),
-              }
-            })
+              };
+            });
             if (isUpdate) {
               this.chart.dataSets[0].dataProvider = this.chartData;
-              this.chart.validateData()
+              this.chart.validateData();
             }
             else {
               this.showChart();
@@ -302,7 +302,7 @@ export default {
     },
     updateTimeInterval(ti) {
       this.interval = ti;
-      this.fetchChartData(true)
+      this.fetchChartData(true);
     },
     toCandleStickChart() {
       this.chartType = 'cs';
@@ -352,7 +352,7 @@ export default {
         useDataSetColors: false,
       };
       panel.stockLegend.valueTextRegular = "[[close]] ";
-      this.chart.validateNow()
+      this.chart.validateNow();
     },
     toLineChart() {
       this.chartType = 'lc';
@@ -378,7 +378,7 @@ export default {
         balloonText: "<b>[[value]]</b>",
       };
       panel.stockLegend.periodValueTextRegular = "[[value.close]] ";
-      this.chart.validateNow()
+      this.chart.validateNow();
     },
     showChart() {
       this.chart = window.AmCharts.makeChart("chartdiv", {
@@ -493,5 +493,5 @@ export default {
       });
     },
   },
-}
+};
 </script>

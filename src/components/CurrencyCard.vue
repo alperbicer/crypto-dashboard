@@ -78,8 +78,8 @@
   </div>
 </template>
 <script>
-import Sparkline from './Sparkline.vue'
-import { unSubscribeSymbol } from '../services/binance'
+import Sparkline from './Sparkline.vue';
+import { unSubscribeSymbol } from '../services/binance';
 export default {
   components: {
     Sparkline,
@@ -98,7 +98,7 @@ export default {
     return {
       showDropDown: false,
       iconbase: 'https://raw.githubusercontent.com/rainner/binance-watch/master/public/images/icons/' + this.info.base.toLowerCase() + '_.png',
-    }
+    };
   },
   methods: {
     onDropDown() {
@@ -107,15 +107,15 @@ export default {
     removeCard() {
       this.showDropDown = false;
       unSubscribeSymbol(this.info.symbol);
-      this.$store.commit('REMOVE_COIN_PAIR', this.info.symbol)
+      this.$store.commit('REMOVE_COIN_PAIR', this.info.symbol);
     },
     openDetails() {
       this.showDropDown = false;
-      this.$router.push({ name: 'infoview', params: { 'symbol': this.info.symbol }})
+      this.$router.push({ name: 'infoview', params: { 'symbol': this.info.symbol }});
     },
     closeDropDown() {
       this.showDropDown = false;
     },
   },
-}
+};
 </script>
