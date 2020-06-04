@@ -1,6 +1,6 @@
 {
-  "name": "vue-crypto-dashboard",
-  "short_name": "vue-crypto-dashboard",
+  "name": "crypto-map-dashboard",
+  "short_name": "crypto-map-dashboard",
   "icons": [
     {
       "src": "img/icons/android-chrome-192x192.png",
@@ -15,7 +15,7 @@
   ],
   "display": "standalone",
   "scope": "/",
-  "start_url": "/vue-crypto-dashboard",
+  "start_url": "/",
   "background_color": "#000000",
   "theme_color": "#4DBA87"
 }

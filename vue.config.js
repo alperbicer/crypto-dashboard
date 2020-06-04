@@ -1,4 +1,8 @@
+const { GenerateSW } = require("workbox-webpack-plugin");
 module.exports = {
+  configureWebpack: {
+    plugins: [new GenerateSW()],
+  },
   pwa: {
     name: 'crypto-map-dashboard',
     "short_name": "vue-crypto-dashboard",
@@ -25,6 +29,12 @@ module.exports = {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
       swSrc: 'dev/sw.js',
+    },
+  },
+  devServer: {
+    overlay: {
+      warnings: true,
+      errors: true,
     },
   },
 }
