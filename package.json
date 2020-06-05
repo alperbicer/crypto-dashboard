@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode development",
-    "analysis": "vue-cli-service build --mode production",
+    "analyze": "vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit",
     "docs": "vue-cli-service build --dest docs",
     "lintfix": "vue-cli-service lint"
@@ -21,9 +21,11 @@
     "vue-router": "3.3.2",
     "vue-select": "2.6.4",
     "vue-server-renderer": "2.6.11",
-    "vuex": "3.4.0"
+    "vuex": "3.4.0",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
+    "@akryum/vue-cli-plugin-ssr": "~0.6.0",
     "@fullhuman/postcss-purgecss": "2.2.0",
     "@fullhuman/vue-cli-plugin-purgecss": "2.2.0",
     "@vue/cli-plugin-babel": "4.4.1",
@@ -39,7 +41,7 @@
     "eslint-plugin-vue": "6.2.2",
     "node-sass": "4.14.1",
     "sass-loader": "8.0.2",
-    "vue-cli-plugin-store": "0.0.7",
+    "vue-cli-plugin-store": "~0.0.7",
     "vue-template-compiler": "2.6.11",
     "webpack-bundle-analyzer": "3.8.0"
   },
