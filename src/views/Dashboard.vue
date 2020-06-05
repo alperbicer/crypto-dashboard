@@ -2,11 +2,11 @@
   <div class="content-box">
     <div class="menu-bar">
       <v-select 
-        id="base" 
-        v-model="baseCurrency" 
-        :options="currencyList[quote]" 
-        :clearable="false" 
+        id="base"
+        v-model="baseCurrency"
         placeholder="Select Token"
+        :options="coinList[quote]" 
+        :clearable="false" 
       />
       <span class="slash">/</span>
       <v-select 
@@ -32,37 +32,47 @@
   </div>
 </template>
 <script>
-import vSelect from 'vue-select';
-import coins from '@/assets/group.json';
-import CryptoBoard from '@/views/CryptoBoard.vue';
+import coinList from '@/assets/group.json';
 import { isEmpty } from '../utils/utility';
+import defaultPair from '@/assets/defaultpair.json';
 import { subscribeSymbol } from '../services/binance';
 import { mapState } from 'vuex';
 export default {
   name: 'Dashboard',
   components: {
-    vSelect,
-    CryptoBoard,
+    'v-select': () => import('vue-select'),
+    CryptoBoard: () => import('@/views/CryptoBoard.vue'),
   },
   data() {
     return {
-      currencyList: coins,
+      coinList: coinList,
       quote: 'BNB',
       quoteOptions: ['BNB', 'BTC', 'ETH', 'USDT'],
       baseCurrency: {},
     };
   },
   computed: {
-    ...mapState(['currencies']),
+    ...mapState({
+      currencyList: state => state.listing.currencyList,
+    }),
+  },
+  created() {
+    this.setDefaultCurrency();
   },
   mounted(){
-    if (this.currencies) {
-      this.currencies.forEach(currency => {
+    if (this.currencyList) {
+      this.currencyList.forEach(currency => {
         subscribeSymbol(currency.symbol);
       });
     }
   },
   methods: {
+    setDefaultCurrency() {
+      const currencyList = Object.prototype.hasOwnProperty.call(localStorage, 'vue-crypto-currency-new') ? 
+        JSON.parse(localStorage.getItem('vue-crypto-currency-new')) : 
+        defaultPair;
+      this.$store.dispatch('SET_DEFAULT_CURRENCY', currencyList);
+    },
     resetBase() {
       this.baseCurrency = {};
     },
@@ -70,9 +80,14 @@ export default {
       if (!isEmpty(this.baseCurrency)){
         const symbol = `${this.baseCurrency.value}${this.quote}`;
         subscribeSymbol(symbol);
-        this.$store.commit('ADD_COIN_PAIR', { 'symbol': symbol, 'base': this.baseCurrency.value, 'quote': this.quote, 'name': this.baseCurrency.name });
+        this.$store.dispatch('ADD_COIN_PAIR', { 'symbol': symbol, 'base': this.baseCurrency.value, 'quote': this.quote, 'name': this.baseCurrency.name });
       }
     },
   },
 };
 </script>
+<style lang="scss">
+.vs1__combobox {
+  background: #fff;
+}
+</style>

@@ -14,7 +14,7 @@ const subscribeSymbol = function (symbol) {
       time:ticker.E,
       symbol: symbol,
     };
-    store.commit('UPDATE_TICKER', tick);
+    store.dispatch('UPDATE_TICKER', tick);
   });
 };
 const unSubscribeSymbol = function (symbol) {

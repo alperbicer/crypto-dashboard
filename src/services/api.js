@@ -15,7 +15,7 @@ export default class Api {
       ticker: (symbol) => `${symbol.toLowerCase()}@ticker`,
       miniTicker: (symbol) => `${symbol.toLowerCase()}@miniTicker`,
       allMiniTicker: () => '!miniTicker@arr',
-      allTickers: () => '!ticker@arr',
+      allTickerList: () => '!ticker@arr',
     };
   }
   subscribe(cb, endpoint, isCombined = false) {
@@ -80,11 +80,11 @@ export default class Api {
   onMiniTicker(symbol, eventHandler) {
     return this.subscribe(eventHandler, this.streams.miniTicker(symbol));
   }
-  onAllMiniTickers(eventHandler) {
+  onAllMiniTickerList(eventHandler) {
     return this.subscribe(eventHandler, this.streams.allMiniTicker());
   }
-  onAllTickers(eventHandler) {
-    return this.subscribe(eventHandler, this.streams.allTickers());
+  onAllTickerList(eventHandler) {
+    return this.subscribe(eventHandler, this.streams.allTickerList());
   }
   onCombinedStream(streams, eventHandler) {
     return this.subscribe(eventHandler, streams.join('/'), true);

@@ -107,7 +107,7 @@ export default {
     removeCard() {
       this.showDropDown = false;
       unSubscribeSymbol(this.info.symbol);
-      this.$store.commit('REMOVE_COIN_PAIR', this.info.symbol);
+      this.$store.dispatch('REMOVE_COIN_PAIR', this.info.symbol);
     },
     openDetails() {
       this.showDropDown = false;

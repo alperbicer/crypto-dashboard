@@ -1,12 +1,12 @@
 <template>
   <div class="board">
     <div 
-      v-for="(value, index) in currencies" 
+      v-for="(value, index) in currencyList" 
       :key="index" 
       class="card-block"
     >
       <CurrencyCard 
-        :ticker="tickers[value.symbol] || {}" 
+        :ticker="tickerList[value.symbol] || {}" 
         :info="value"
       />
     </div>
@@ -21,7 +21,10 @@ export default {
     CurrencyCard,
   },
   computed: {
-    ...mapState(['tickers', 'currencies']),
+    ...mapState({
+      currencyList: state => state.listing.currencyList,
+      tickerList: state => state.listing.tickerList,
+    }),
   },
 };
 </script>
