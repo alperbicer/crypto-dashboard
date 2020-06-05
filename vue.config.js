@@ -1,8 +1,10 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   publicPath: '/',
   configureWebpack: {
-    plugins: [new BundleAnalyzerPlugin()],
+    plugins: [
+      // new BundleAnalyzerPlugin(),
+    ],
   },
   pwa: {
     'name': 'crypto-map-dashboard',

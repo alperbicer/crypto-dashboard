@@ -8,12 +8,12 @@ const router = new Router({
     {
       path: '/',
       name: 'dashboard',
-      component: () => import(/* webpackChunkName: "Dashboard" */ './views/Dashboard.vue'),
+      component: () => import(/* webpackChunkName: "Dashboard" */ '../views/Dashboard.vue'),
     },
     {
       path: '/view/:symbol',
       name: 'infoview',
-      component: () => import(/* webpackChunkName: "InfoView" */ './views/InfoView.vue'),
+      component: () => import(/* webpackChunkName: "InfoView" */ '../views/InfoView.vue'),
       props: true,
     },
   ],
