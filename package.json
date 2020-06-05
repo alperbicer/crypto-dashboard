@@ -1,10 +1,11 @@
 {
   "name": "crypto-map-dashboard",
-  "description": "Vue Cryptocurrency Dashboard",
-  "author": "JayeshLab <helloiamjayesh@gmail.com>",
+  "description": "Cryptocurrency Map Dashboard",
+  "author": "Alper <alperbicer@yandex.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode development",
+    "analysis": "vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit",
     "docs": "vue-cli-service build --dest docs",
     "lintfix": "vue-cli-service lint"

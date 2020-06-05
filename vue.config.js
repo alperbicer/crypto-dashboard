@@ -1,9 +1,18 @@
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const AnalyzerMode = function () {
+  return process.env.NODE_ENV === 'production' ? 'static' : 'disabled';
+};
 module.exports = {
   publicPath: '/',
   configureWebpack: {
     plugins: [
-      // new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin(Object.assign({
+        defaultSizes: 'gzip',
+        generateStatsFile: true,
+        analyzerMode: AnalyzerMode(),
+        reportFilename: './reports-index.html',
+        statsFilename: './reports-index.json',
+      })),
     ],
   },
   pwa: {
