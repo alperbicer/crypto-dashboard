@@ -27,4 +27,14 @@ module.exports = {
       errors: true,
     },
   },
+  css: {
+    requireModuleExtension: false,
+    loaderOptions: {
+      sass: {
+        prependData: `
+          @import "@/assets/app.scss";
+        `,
+      },
+    },
+  },
 };
