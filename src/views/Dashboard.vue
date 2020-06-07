@@ -68,9 +68,7 @@ export default {
   },
   methods: {
     setDefaultCurrency() {
-      const currencyList = Object.prototype.hasOwnProperty.call(localStorage, 'vue-crypto-currency-new') ? 
-        JSON.parse(localStorage.getItem('vue-crypto-currency-new')) : 
-        defaultPair;
+      const currencyList = this.currencyList || defaultPair;
       this.$store.dispatch('SET_DEFAULT_CURRENCY', currencyList);
     },
     resetBase() {
