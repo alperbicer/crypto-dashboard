@@ -1,15 +1,6 @@
 <template>
   <div class="layout-container">
-    <header class="page-header bg-primary">
-      <button 
-        v-if="currentPage === 'infoview'" 
-        class="back-btn" 
-        @click="$router.push({ path: '/' })"
-      >
-        <i class="fa fa-angle-left fa-2x" />
-      </button>
-      <span class="page-title">CRYPTO MAP DASHBOARD</span>
-    </header>
+    <navbar />
     <div class="page-container">
       <transition 
         name="fade" 
@@ -23,20 +14,28 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
+import Navbar from '@/components/Navbar';
 export default {
   name: 'LayoutPage',
-  data() {
-    return {
-      currentPage: 'dashboard',
-    };
+  components: {
+    Navbar,
   },
-  watch: {
-    '$route': {
-      deep: true,
-      handler: function (page) {
-        this.currentPage = page.name;
-      },
-    },
+  computed: {
+    ...mapGetters({
+      user: 'user',
+    }),
   },
 };
 </script>
+<style lang="scss" scoped>
+.layout-container{ 
+  height: 100%;
+  width:100%;
+  .page-container {
+    width: 100%;
+    height: 100%;
+    padding-top:60px;
+  }
+}
+</style>

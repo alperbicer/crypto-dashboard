@@ -28,3 +28,17 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.board {
+  padding-top:60px;
+  max-width: 1650px;
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-gap: 10px;
+  .card-block {
+    display: flex;
+    justify-content: center;
+  }
+}
+</style>

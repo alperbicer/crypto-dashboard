@@ -11,6 +11,16 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "Dashboard" */ '../views/Dashboard.vue'),
     },
     {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue'),
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import(/* webpackChunkName: "Register" */ '../views/Register.vue'),
+    },
+    {
       path: '/view/:symbol',
       name: 'infoview',
       component: () => import(/* webpackChunkName: "InfoView" */ '../views/InfoView.vue'),
