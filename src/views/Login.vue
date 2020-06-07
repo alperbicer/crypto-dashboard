@@ -74,8 +74,8 @@ export default {
   data() {
     return {
       form: {
-        email: '',
-        password: '',
+        email: 'q@q.com',
+        password: '123123',
       },
       error: null,
     };

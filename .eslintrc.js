@@ -9,6 +9,13 @@ module.exports = {
     'plugin:vue/recommended',
   ],
   rules: {
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 1,
+      'multiline': {
+        'max': 1,
+        'allowFirstLine': false,
+      },
+    }],
     'keyword-spacing': ['error', { 'before': true }],
     quotes: ['error', 'single', { 'avoidEscape': true }],
     semi: ['error', 'always'],

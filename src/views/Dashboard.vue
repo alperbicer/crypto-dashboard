@@ -22,6 +22,10 @@
         class="add-btn" 
         @click="addCoinPair"
       >
+        <font-awesome-icon
+          icon="plus"
+          size="lg"
+        />
         <i 
           class="fa fa-plus fa-lg" 
           aria-hidden="true"

@@ -28,7 +28,17 @@
         :class="[(ticker.percent < 0)?'down':'up', 'col-5','text-right']"
       >
         <div class="coin-per">
-          <span class="indicator" /><span>{{ ticker.percent }}%</span>
+          <span class="indicator">
+            <font-awesome-icon
+              v-if="ticker.percent < 0"
+              icon="arrow-down"
+            />
+            <font-awesome-icon
+              v-else
+              icon="arrow-up"
+            />
+          </span>
+          <span>{{ ticker.percent }}%</span>
         </div>
         <div class="coin-chg">
           {{ parseFloat(ticker.chg).toFixed((info.quote === 'USDT') ? 3 : 8) }}
@@ -45,10 +55,7 @@
           class="menu-btn" 
           @click.stop="onDropDown"
         >
-          <i 
-            class="fa fa-ellipsis-v" 
-            aria-hidden="true"
-          />
+          <font-awesome-icon icon="ellipsis-v" />
         </span>
         <div 
           v-if="showDropDown" 
